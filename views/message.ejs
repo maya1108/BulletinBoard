@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<title>New Blog Entry</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="../style.css">
+</head>
+  <body>
+          <h1>Messages</h1>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="list-group">
+          <!-- loop over blog posts and render them -->
+            <% result.forEach(function(post) { %>
+              <a href="/post/<%=post.id %>" class="list-group-item">
+                <h4 class="list-group-item-heading"><%= post.title %></h4>
+              </a>
+                <% }) %>
+              </div>
+            </div>
+        </div>
+      </div>
+      <h1>Add a New Entry</h1>
+      <center><div class="eContain">
+        <center><form class="" action="/" method="post">
+          <div class="form-group">
+            <h3>Title</h3>
+            <input  class="form-control" type="text" name="title" placeholder="title"  >
+          </div>
+          <br>
+          <div class="form-group">
+            <h3>Article</h3>
+            <textarea  class="form-control" type="text"name= "article" spellcheck="true" placeholder="Article" rows="8" ></textarea>
+          </div>
+          <br>
+          <div class="form-group">
+            <button  class="btn btn-primary btn-lg btn-block" >Submit</button>
+          </div>
+        </form></center>
+      </div></center>
+
+    </body>
+</html>
