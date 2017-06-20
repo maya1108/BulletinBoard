@@ -1,17 +1,17 @@
 // require and instantiate express
+var dotenv = require('dotenv').config();
 var express = require('express');
 var mysql = require('mysql');
 var app = express();
 var bodyParser = require("body-parser");
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use( express.static( "public" ) );
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'DB_USER',
-  password : 'DB_PASS',
+  user     : process.env.DB_USER,
+  password : process.env.DB_PASS,
   database  : 'bulletinboard'
 })
 connection.connect(function(error){
